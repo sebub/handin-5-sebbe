@@ -5,7 +5,7 @@
 int is_palindrome_iter(char *str);
 int main(void)
 {
-    char *str = "gtoltlog";
+    char *str = "gtootg";
     int test = is_palindrome_iter(str);
     printf("%d",test);
 
