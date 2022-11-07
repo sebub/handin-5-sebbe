@@ -10,7 +10,7 @@ void convert_to_lowercase(char *str){//runs over every letter in the string and 
 
 int is_palindrome_iter(char *str) {//takes a string and return 1 if string is a palindrome
     for (int i = 0; i < floor(strlen(str) / 2); ++i){//Since 2 chars will be compared each iteration the loop will run string length / 2 times.
-        if (str[i] != str[strlen(str) - (i + 1)])//compares fist and last letter in a string
+        if (str[i] != str[strlen(str) - (i + 1)])
             return 0;
     }
     return 1;
