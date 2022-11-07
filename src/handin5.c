@@ -3,17 +3,19 @@
 #include <math.h>
 
 int is_palindrome_iter(char *str);
-
 int is_palindrome_rec_test(char *str, int length);
-
 int is_palindrome_rec(char *str);
 
 int main(void) {
-    char* str = "llgoogll";
+    char str[50];
 
-    printf("%d\n", is_palindrome_iter(str));
+    scanf("%s",str);
 
-    printf("%d\n", is_palindrome_rec(str));
+    if(is_palindrome_iter(str)==1)
+        printf("%s is a palindrome using iter\n",str);
+
+    if(is_palindrome_rec(str)==1)
+        printf("%s is a palindrome using rec\n",str);
 }
 
 int is_palindrome_iter(char *str) {
@@ -33,8 +35,8 @@ int is_palindrome_rec(char *str) {
 int is_palindrome_rec_test(char *str, int length) {
     if(length<2)
         return 1;
+    if(str[0] != str[length-1])
+        return 0;
     else
-        return str[0] == str[length - 1] && is_palindrome_rec_test(str + 1, length - 2);
-
+        return is_palindrome_rec_test(str + 1, length - 2);
 }
-
